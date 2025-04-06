@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estúdio Lumora</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: white;
+      background-color: black;
+      position: relative;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    .gradient-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle, #8e24aa, #ff00d2, transparent 70%);
+      animation: pulse 8s ease-in-out infinite;
+      filter: blur(100px);
+    }
+
+    .noise-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.6" numOctaves="5" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.1"/></svg>');
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 60px 20px 40px;
+      min-height: 100vh;
+      justify-content: center;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 16px #ff00d2;
+      margin-bottom: 16px;
+    }
+
+    .username {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    .name {
+      font-size: 16px;
+      font-weight: 400;
+      color: #f0f0f0;
+      margin-bottom: 24px;
+    }
+
+    .banner {
+      width: 100%;
+      max-width: 420px;
+      margin-top: 10px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #ff00d2;
+    }
+
+    .behance {
+      margin: 40px 0 20px;
+    }
+
+    .behance img {
+      width: 150px;
+      transition: transform 0.3s;
+    }
+
+    .behance img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #242424;
+      padding: 40px 20px 20px;
+      color: #ccc;
+      position: relative;
+    }
+
+    footer::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.5" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.12"/></svg>');
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    footer .footer-content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    footer img {
+      width: 80px;
+      margin-bottom: 10px;
+    }
+
+    footer p {
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="gradient-bg"></div>
+  <div class="noise-bg"></div>
+
+  <div class="container">
+    <img src="img/foto-perfil.png" alt="Foto de Perfil" class="profile-img" />
+    <div class="username">@estudiolumora</div>
+    <div class="name">Gabriela Azevedo</div>
+    <a href="https://wa.me/5511932648177" target="_blank">
+      <img src="img/banner-orcamento.png" alt="Solicite um orçamento" class="banner" />
+    </a>
+
+    <div class="behance">
+      <a href="https://www.behance.net/gabrielaxazevedo" target="_blank">
+        <img src="img/behance.png" alt="Behance" />
+      </a>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <img src="img/logo-lumora.png" alt="Logo Lumora" />
+      <p>Gabriela Azevedo dos Santos | 40.475.252/0001-91</p>
+    </div>
+  </footer>
+</body>
+</html>
